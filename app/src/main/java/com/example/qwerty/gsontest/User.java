@@ -1,12 +1,6 @@
 package com.example.qwerty.gsontest;
 
-import android.graphics.Canvas;
-
-import com.google.common.base.Function;
-import com.google.common.collect.Ordering;
 import com.google.gson.annotations.SerializedName;
-
-
 
 /**
  * Created by qwerty on 24.11.16.
@@ -40,16 +34,7 @@ public class User {
         return gender;
     }
 
-    static Function<User, Gender> onGender = new Function<User, Gender>() {
-        @Override
-        public Gender apply(User input) {
-            return input.gender;
-        }
-    };
-
     public enum Gender {
         MALE, FEMALE, NOT_SURE;
-
-        static Ordering<Gender> genderOrder = Ordering.explicit(Gender.NOT_SURE, Gender.MALE, Gender.FEMALE);
     }
 }

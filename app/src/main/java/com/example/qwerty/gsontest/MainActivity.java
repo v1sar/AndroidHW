@@ -1,7 +1,5 @@
 package com.example.qwerty.gsontest;
 
-
-import android.location.GnssClock;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -34,8 +32,6 @@ public class MainActivity extends AppCompatActivity {
                 System.out.println(json);
 
                 JsonCommunity jsonCommunity = parser.parse(json);
-                System.out.println("hello");
-
                 Ordering<User> primary = Ordering.natural().onResultOf(new Function<User, Integer>() {
                     @Override
                     public Integer apply(User input) {
@@ -57,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
                 List<User> usersTemp = jsonCommunity.getUsers();
                 Collections.sort(usersTemp, compound);
                 System.out.println(usersTemp);
-
             }
         });
     }
